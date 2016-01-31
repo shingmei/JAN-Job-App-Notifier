@@ -1,7 +1,11 @@
+"use strict"
+
 var express = require('express');
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
+var config = require('./config');
+
+app.set('port', config.PORT);
 
 app.get('/', function(req, res) {
 	res.json('asdf');
