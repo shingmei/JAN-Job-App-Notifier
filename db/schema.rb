@@ -16,13 +16,14 @@ ActiveRecord::Schema.define(version: 20160131035551) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "links_tables", force: :cascade do |t|
+  create_table "links", force: :cascade do |t|
     t.text "company_name"
     t.text "url"
     t.text "status"
+    t.text "page_hash"
   end
 
-  create_table "subscribers_tables", force: :cascade do |t|
+  create_table "subscribers", force: :cascade do |t|
     t.text "email"
   end
 

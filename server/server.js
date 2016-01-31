@@ -7,10 +7,17 @@ function start() {
 
 	var config = require('../config');
 
+	var db = require('../db')(config);
+
+	var options = {
+		db: db
+	};
+
 	app.use(bodyParser.urlencoded({ extended : true}));
 	app.use(bodyParser.json());
 	app.set('port', config.PORT);
-	var controllers = require('../app/controllers');
+
+	var controllers = require('../app/controllers')(options);
 	app.use(controllers);
 
 	app.listen(app.get('port'), function () {

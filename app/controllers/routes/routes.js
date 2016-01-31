@@ -1,10 +1,14 @@
 "use strict"
 
-var express = require('express');
-var router = express.Router();
+function factory(options) {
+	var express = require('express');
+	var router = express.Router();
 
-router.get('/', function(req, res) {
-	res.json('asdf');
-});
+	router.get('/', function(req, res) {
+		res.json('asdf');
+	});
 
-module.exports = router;
+	return router;
+}
+
+module.exports = factory;

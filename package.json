@@ -21,9 +21,11 @@
     "bluebird": "^3.1.5",
     "body-parser": "^1.14.2",
     "buffer-equal": "^1.0.0",
+    "crypto": "0.0.3",
     "express": "^4.13.4",
     "fs-promise": "^0.4.0",
     "knex": "^0.9.0",
+    "pg": "^4.4.4",
     "resemble": "^1.2.1",
     "resemblejs": "^2.1.0",
     "webshot": "^0.17.0"

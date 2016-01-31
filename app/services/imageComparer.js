@@ -3,6 +3,7 @@ var fsp = require('fs-promise');
 var Promise = require('bluebird');
 var fs = require('fs');
 var bufferEqual = require('buffer-equal');
+var crypto = require('crypto');
 
 function compareImages(file1, file2) {
 
@@ -14,7 +15,15 @@ function compareImages(file1, file2) {
 
 	// Check whether the two images are equal
 	.then(function (result) {
-		return Promise.resolve(bufferEqual(result.f1data, result.f2data));
+		var f1hash = crypto.createHash('sha256').update(result.f1data).digest('hex');
+		var f2hash = crypto.createHash('sha256').update(result.f2data).digest('hex');
+
+		// console.log(f1hash);
+		// console.log(f2hash);
+
+		return Promise.resolve( f1hash === f2hash );
+
+		// return Promise.resolve(bufferEqual(result.f1data, result.f2data));
 	});
 }
 
