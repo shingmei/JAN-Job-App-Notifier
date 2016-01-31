@@ -6,3 +6,5 @@ var router = express.Router();
 router.get('/', function(req, res) {
 	res.json('asdf');
 });
+
+module.exports = router;

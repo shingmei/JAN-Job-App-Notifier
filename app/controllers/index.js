@@ -1,5 +1,3 @@
 "use strict"
 
-var controllers = module.exports;
-
-controllers = require('./routes');
+module.exports = require('./routes');
