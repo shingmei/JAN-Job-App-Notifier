@@ -9,7 +9,7 @@ function getScreenshot(url, file) {
 		console.log('Screenshot of ', url, ' saved successfully to ', file);
 	})
 	.catch(function (err) {
-		console.log('Screenshot of ', url, ' FAILED to save to', file, '\n', error);
+		console.log('Screenshot of ', url, ' FAILED to save to', file, '\n', err);
 	});
 }
 

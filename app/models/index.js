@@ -1,10 +1,8 @@
-function factory(options) {
-	var db = options.db;
+module.exports = function(db) {
 	var models = {};
 
-	models.links = require('./links.js')(options);
+	models.links = require('./links.js')(db);
+	models.subscribers = require('./subscribers')(db);
 
 	return models;
-}
-
-module.exports = factory;
+};

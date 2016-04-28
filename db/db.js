@@ -1,10 +1,8 @@
-function factory(config) {
+module.exports = function(config) {
 	var db = require('knex')({
 		client: 'pg',
 		connection: config.DATABASE_URL
 	});
 
 	return db;
-}
-
-module.exports = factory;
+};

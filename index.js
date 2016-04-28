@@ -2,9 +2,8 @@ var server = require('./server');
 
 var services = require('./app/services');
 
-return services.siteComparer('www.google.com')
-.then(function (imagesEqual) {
-	console.log(imagesEqual);
-	server.start();
-});
-
+// return services.imageComparer('./google.png', './google2.png')
+// .then(function (data) {
+// 	console.log(data);
+// });
+server.start();

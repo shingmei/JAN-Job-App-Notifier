@@ -10,15 +10,15 @@ function start() {
 	var db = require('../db')(config);
 
 	var options = {
-		db: db
+		db: db,
+		app: app
 	};
 
 	app.use(bodyParser.urlencoded({ extended : true}));
 	app.use(bodyParser.json());
 	app.set('port', config.PORT);
 
-	var controllers = require('../app/controllers')(options);
-	app.use(controllers);
+	require('../app/controllers')(options);
 
 	app.listen(app.get('port'), function () {
 		console.log('Node app is running on port', app.get('port'));

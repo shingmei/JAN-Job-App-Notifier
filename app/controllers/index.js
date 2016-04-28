@@ -1,7 +1,6 @@
 "use strict"
 
-function factory(options) {
-	return require('./routes')(options);
-}
-
-module.exports = factory;
+module.exports = function(options) {
+	require('./routes')(options);
+	require('./mailing')(options);
+};

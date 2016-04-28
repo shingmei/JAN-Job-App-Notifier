@@ -1,3 +1,3 @@
 module.exports = function(options) {
-	require('./routes.js')(options);
+	require('./mailer.js')(options);
 };
